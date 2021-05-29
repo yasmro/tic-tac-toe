@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Tic-toc-toe</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <main>
+            <div class="container">
+                <h1>Tic-Tac-Toe Game</h1>
+                <div class="config">
+                    <select name="difficulty" id="difficulty">
+                        <option value="1">Lv.1 Easy</option>
+                        <option value="2">Lv.2 Normal</option>
+                        <!-- <option value="3">Lv.3 Hard</option> -->
+                    </select>
+                    <!-- <div class="player">
+                        <input type="radio" class="radio" id="player1" name="player" value="player1" checked><label class="label" for="player1">P1</label>
+                        <input type="radio" class="radio" id="player2" name="player" value="player2"><label class="label" for="player2">P2</label>
+                    </div> -->
+                    <button class="btn" id="startBtn" onClick="startGame()">START</button>
+                    <button class="btn" id="resetBtn" onClick="resetGame()">RESET</button>
+                    
+                </div>
+                <div class="board" id="board">
+                    <div class="cell" val=""></div>
+                    <div class="cell" val=""></div>
+                    <div class="cell" val=""></div>
+                    <div class="cell" val=""></div>
+                    <div class="cell" val=""></div>
+                    <div class="cell" val=""></div>
+                    <div class="cell" val=""></div>
+                    <div class="cell" val=""></div>
+                    <div class="cell" val=""></div>
+                </div>
+                <div class="situation">
+                    <!-- <button id="restart" onClick="resetGame()">RESTART GAME</button> -->
+                    <span id="hud">Gaming...</span>
+                    <span id="result"> (0 Games 0 Wins 0 Loses)</span>
+                </div>
+            </div>
+        </main>
+        <footer></footer> 
+        <script src="js/script.js" async defer></script>
+        <script>
+            
+        </script>
+    </body>
+</html>
