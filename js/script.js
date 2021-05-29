@@ -131,6 +131,31 @@ const aiTurn = () => {
         number = cellAvailable[0]
     }else if(aiLevel === "2"){
         number = cellAvailable[Math.floor( Math.random() * cellAvailable.length )];
+    }else if(aiLevel === "3"){
+        var isAlmost = false;
+        cellAvailable.forEach(cell => {
+            var tempBoard = [...cellData]
+            tempBoard[cell] = AI_TURN         
+            if(checkBingo(tempBoard)){
+                number = cell;
+                isAlmost = true;
+                return;
+            }
+            if(!isAlmost){
+                tempBoard[cell] = YOUR_TURN
+                if(checkBingo(tempBoard)){
+                    number = cell;
+                    isAlmost = true;
+                    return;
+                }
+            }
+
+        })
+
+        if(!isAlmost){
+            var number = cellAvailable.some(cell => cell === 4) ? 4 : cellAvailable[Math.floor( Math.random() * cellAvailable.length )];
+        }
+        
     }else{
         ;
     }
@@ -171,5 +196,13 @@ window.onload = () => {
     var wins = parseInt(localStorage.getItem("wins")) || 0
     document.getElementById("result").innerHTML = `${games} Games ${wins} Wins`
     
+}
+
+const resetResult = () => {
+    localStorage.setItem("games", 0)
+    localStorage.setItem("wins", 0)
+    var games = parseInt(localStorage.getItem("games")) || 0
+    var wins = parseInt(localStorage.getItem("wins")) || 0
+    document.getElementById("result").innerHTML = `${games} Games ${wins} Wins`
 }
 

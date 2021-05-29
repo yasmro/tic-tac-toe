@@ -24,7 +24,7 @@
                     <select name="difficulty" id="difficulty">
                         <option value="1">Lv.1 Easy</option>
                         <option value="2">Lv.2 Normal</option>
-                        <!-- <option value="3">Lv.3 Hard</option> -->
+                        <option value="3">Lv.3 Hard</option>
                     </select>
                     <!-- <div class="player">
                         <input type="radio" class="radio" id="player1" name="player" value="player1" checked><label class="label" for="player1">P1</label>
@@ -46,9 +46,10 @@
                     <div class="cell" val=""></div>
                 </div>
                 <div class="situation">
-                    <!-- <button id="restart" onClick="resetGame()">RESTART GAME</button> -->
-                    <span id="hud">Gaming...</span>
-                    <span id="result"> (0 Games 0 Wins 0 Loses)</span>
+                    
+                    <span id="hud">Select Level</span>
+                    <button class="btn" id="resetResult" onClick="resetResult()">RESET RESULT</button>
+                    <span id="result">0 Games 0 Wins</span>
                 </div>
             </div>
         </main>
