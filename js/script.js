@@ -21,9 +21,13 @@ var steps = 0;
 const startButton = document.getElementById("startBtn")
 const resetButton = document.getElementById("resetBtn")
 
+const radios = Array.from(document.getElementsByClassName("radio"))
+
 const prepareGame = () => {
     const aiLevelSelect = document.getElementById("difficulty");
     aiLevelSelect.disabled = false;
+
+    radios.forEach((radio) => radio.disabled = false)
 
     cells.forEach((cell, index) => {
         cell.classList.remove(YOUR_TURN_CLASS, AI_TURN_CLASS)
@@ -41,7 +45,9 @@ const prepareGame = () => {
 const startGame = () => {
     const aiLevelSelect = document.getElementById("difficulty");
     aiLevel = aiLevelSelect.value;
+
     aiLevelSelect.disabled = true;
+    radios.forEach((radio) => radio.disabled = true)
 
     cells.forEach((cell, index) => {
         cell.onclick = cellClick.bind(null, cell)
@@ -53,9 +59,28 @@ const startGame = () => {
     })
     hud.innerHTML="Game Start!"
     steps = 0;
-    isFreeze = false;
+
     startButton.disabled = true;
     // board.style.display = "grid"
+
+    const player2 = document.getElementById("player2");
+
+    if(player2.checked){
+        setTimeout(() => { 
+            var number = aiTurn();
+            cellData[number] = AI_TURN
+            cellAvailable = cellAvailable.filter(cell => cell !== number)
+        
+            cells[number].innerHTML = AI_TURN
+            cells[number].classList.add(AI_TURN_CLASS)
+            console.log(cellData)
+            steps++;
+            hud.innerHTML = `Steps:${steps}`
+            isFreeze = false;
+        }, 1000)
+    }else{
+        isFreeze = false;
+    }
 
 }
 

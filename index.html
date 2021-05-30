@@ -21,15 +21,18 @@
             <div class="container">
                 <h1>Tic-Tac-Toe Game</h1>
                 <div class="config">
-                    <select name="difficulty" id="difficulty">
-                        <option value="1">Lv.1 Easy</option>
-                        <option value="2">Lv.2 Normal</option>
-                        <option value="3">Lv.3 Hard</option>
-                    </select>
-                    <!-- <div class="player">
-                        <input type="radio" class="radio" id="player1" name="player" value="player1" checked><label class="label" for="player1">P1</label>
-                        <input type="radio" class="radio" id="player2" name="player" value="player2"><label class="label" for="player2">P2</label>
-                    </div> -->
+                    <div>
+                        <select name="difficulty" id="difficulty">
+                            <option value="1">Lv.1 Easy</option>
+                            <option value="2">Lv.2 Normal</option>
+                            <option value="3">Lv.3 Hard</option>
+                        </select>
+                        <div class="player" id="player">
+                            <label class="label" for="player">Order:</label>
+                            <input type="radio" class="radio" id="player1" name="player" value="player1" checked><label class="label" for="player1">First</label>
+                            <input type="radio" class="radio" id="player2" name="player" value="player2"><label class="label" for="player2">Second</label>
+                        </div>
+                    </div>
                     <button class="btn" id="startBtn" onClick="startGame()">START</button>
                     <button class="btn" id="resetBtn" onClick="resetGame()">RESET</button>
                     

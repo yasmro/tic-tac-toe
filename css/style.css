@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght,italic@200,1;300,1;400,1;500,1;600,1;700,1&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Karla:wght,italic@200,1;300,1;400,1;500,1;600,1;700,1&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@1,400&display=swap');
 
 :root{
     --base: #ffffff;
@@ -12,13 +13,19 @@
 
 *{
     -webkit-font-smoothing: antialiased;
+    /* font-family:  'Karla', sans-serif; */
     font-family:  'Karla', sans-serif;
     font-style: italic;
-
+    font-weight: unset;
 }
 
 html{
     background-color: var(--base);
+}
+
+h1{
+    font-variant: small-caps;
+    letter-spacing: 2px;
 }
 
 .container{
@@ -30,11 +37,12 @@ html{
 
 .config{
     border: 1px solid #eeeeee;
-    padding: 30px 60px;
+    padding: 20px 20px;
     border-radius: 10px;
     box-shadow: var(--shadow);
     display: flex;
     align-items: center;
+    column-gap: 8px;
 }
 
 #difficulty {
@@ -43,9 +51,9 @@ html{
     appearance: none;
 
     display: inline-block;
-    width: 100%; 
+    width: 75%; 
     margin: 1em 2em 1em 0; 
-    padding: 0.6em 1.5em 0.6em 1.5em; 
+    padding: 0.6em 1em; 
     cursor: pointer; 
     line-height: 1.4; 
     font-size: 0.95em; 
@@ -94,6 +102,13 @@ html{
     outline: none;
 }
 
+.player .radio:checked:disabled + .label{
+    background: #f0f0f0;
+    color: #000;
+    box-shadow: none;
+}
+
+
 
 
 .board{
@@ -135,7 +150,8 @@ html{
 
 .situation{
     border: 1px solid #eeeeee;
-    padding: 20px 60px;
+    padding: 20px 20px;
+    margin-bottom: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
@@ -148,7 +164,7 @@ html{
 .btn {
     width: 140px;
     height: 45px;
-    font-size: 11px;
+    font-size: 12px;
     margin-right: 10px;
     text-transform: uppercase;
     color: #000;
